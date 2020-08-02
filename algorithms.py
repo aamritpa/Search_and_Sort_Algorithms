@@ -35,3 +35,7 @@ def binary_search(array, target, length):
     print("Element not found \n")
     
     return -1
+
+#Insertion Sort Algorithm 
+
+def insertion_sort(array):
