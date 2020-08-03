@@ -48,5 +48,73 @@ public class Algorithm {
         Systme.out.printIn("Element not found \n");
         return -1;
     }
+
+    
+    /* Insertion Sort Algorithm */
+
+    static int* insertion_sort( int* array)
+        {
+            int first=0;
+            int next=first+1;
+
+            while (next<=array.length)-1){
+                if(array[first]>array[next]){
+                    int temp= array[first];
+                    array[first]=array[next];
+                    array[next]=temp;
+                    first=0;
+                    next=first+1;
+                }
+                else{
+                    first=first+1;
+                    next=first+1;
+                }
+            }
+            return array;
+        }
+    //Bubble Sort Algorithm 
+    static int* bubble_sort(int array[], int length)
+    {
+        int first = 0;
+        int next = first + 1;
+        int count = 0;
+        bool pass = true;
+            while (pass) {
+                if (array[first] > array[next])
+                {
+                    int temp = array[first];
+                    array[first] = array[next];
+                    array[next] = temp;
+                    first = first + 1;
+                    next = first + 1;
+                    count++;
+                    if (next >= length - 1)
+                    {
+                        first = 0;
+                        next = first + 1;
+                        count = 0;
+                    }
+                }
+                else
+                {
+                    first = first + 1;
+                    next = first + 1;
+                    if (next > length - 1 && count!=0)
+                    {
+                        first = 0;
+                        next = first + 1;
+                        count = 0;
+                    }
+                    else if (next > length - 1 && count ==0)
+                    {
+                        pass = false;
+                    }
+                }
+                if (((next > length - 1) && count == 0))
+                {
+                    pass = false;
+                }
+            }
+        return array;
 }
 

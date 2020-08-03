@@ -13,6 +13,7 @@ def linear_search(array,target):
 
     return -1 
 
+# Binary Search Algorithm
 def binary_search(array, target, length):
 
     mid =length/2
@@ -39,3 +40,61 @@ def binary_search(array, target, length):
 #Insertion Sort Algorithm 
 
 def insertion_sort(array):
+    first=0
+    next=first+1
+
+    while (next<=len(array)-1):
+        if(array[first]>array[next]):
+            temp= array[first]
+            array[first]=array[next]
+            array[next]=temp
+            first=0
+            next=first+1
+        else:
+            first=first+1
+            next=first+1
+    
+    return array
+
+
+# Bubble Sort Algorithm
+
+def bubble_sort(array, length):
+    first = 0
+    next = first + 1
+    count = 0
+    passed = True
+        
+    while (passed):
+        if (array[first] > array[next]):
+            temp = array[first]
+            array[first] = array[next]
+            array[next] = temp
+            first = first + 1
+            next = first + 1
+            count=count+1
+            if (next >= length - 1):
+                first = 0
+                next = first + 1
+                count = 0
+            else:
+                first = first + 1
+                next = first + 1
+                
+                if (next > length - 1 and count!=0):
+                    first = 0
+                    next = first + 1
+                    count = 0
+                elif (next > length - 1 and count ==0):
+                    passed = False
+    
+            if (((next > length - 1) and count == 0)):
+                passed = False
+
+    return array
+
+
+
+
+
+
